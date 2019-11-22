@@ -9,16 +9,16 @@ This project obtains data about a catalog of books from an XML file. Each book h
 
 The index store keywords in the author, title, genre, and description attributes of books. Keywords are obtained from the content of attribute after removing white space and punctuation characters (except for apostrophe').
 
-e.g. python index.py books.xml index.xml
+Execution format: python index.py books.xml index.xml
 
 (2) Searching
 "search.py" takes the data file (e.g. books.xml), index file (e.g. index.xml) and a string of keywords (separated by white space), and outputs the search result in an XML file. which lists the documents having all the keywords in at least one of the attributes and also the complete content of the attributes.
 
 The search is case-insensitive and punctuations (except for apostrophe') will be removed (i.e. "XS-lt%" is the same as "xslt").
 
-e.g. python search.py books.xml index.xml "xml xslt" results.xml
+Execution format: python search.py books.xml index.xml "xml xslt" results.xml
 
-will store the following results in a file called "results.xml":
+The above format will store the following results in a file called "results.xml":
 
 <results>
 	<book id="bk111">
