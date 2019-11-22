@@ -7,14 +7,16 @@ This project obtains data about a catalog of books from an XML file. Each book h
 (1) Creating Index
 "index.py" is a Python script that takes two XML file names in command line. The first file stores book data and the second one is the output file name. The script takes the first file as the input and outputs the index in the second file.
 
-For example: python index.py books.xml index.xml
+The index store keywords in the author, title, genre, and description attributes of books. Keywords are obtained from the content of attribute after removing white space and punctuation characters (except for apostrophe').
+
+e.g. python index.py books.xml index.xml
 
 (2) Searching
-"search.py" takes the data file (e.g. books.xml), index file (e.g. index.xml) and a string of keywords, and outputs the search result in an XML file. which lists the documents having all the keywords in at least one of the attributes and also the complete content of the attributes.
+"search.py" takes the data file (e.g. books.xml), index file (e.g. index.xml) and a string of keywords (separated by white space), and outputs the search result in an XML file. which lists the documents having all the keywords in at least one of the attributes and also the complete content of the attributes.
 
-For example,
+Punctuations (except for apostrophe') will be removed for searching (i.e. "xs-lt%" is the same as "xslt").
 
-python search.py books.xml index.xml "xml xslt" results.xml
+e.g. python search.py books.xml index.xml "xml xslt" results.xml
 
 will store the following results in a file called "results.xml":
 
